@@ -35,7 +35,7 @@ const Quotes = (props) => {
             {/* {data.map(
                 item => <p>{item.text}</p>
             )} */}
-            <p>{singleQuote?.text}</p>
+            {/* <p>{singleQuote?.text}</p> */}
 
         </>
     )
