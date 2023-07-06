@@ -31,7 +31,7 @@ const Quotes = (props) => {
                 <span>“</span>
                 {singleQuote?.text}
                 </h3>
-                <i>- {singleQuote?.author}</i>
+                <i> - {singleQuote?.author}</i>
             {/* {data.map(
                 item => <p>{item.text}</p>
             )} */}
