@@ -1,15 +1,19 @@
 import React, {useState, useEffect} from "react";
 
+const getRandomQuotes = (quotes) => {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+}
+
 const Quotes = (props) => {
     const [data, setData] = useState([]);
-    const [singleQuote, setSingleQuote] = useState();
+    const [singleQuote, setSingleQuote] = useState(null);
     let quote_url = 'https://type.fit/api/quotes';
 
     useEffect (() => {
         let mounted = true;
         fetch(quote_url)
-        .then(response => response.json())
-        .then(jsondata => {
+        .then((response) => response.json())
+        .then((jsondata) => {
             // console.log(jsondata)
             if (mounted) {
                 setData(jsondata);
@@ -20,7 +24,7 @@ const Quotes = (props) => {
     }, [])
 
     const getQuotesData = () => {
-        setSingleQuote(data)
+        setSingleQuote(getRandomQuotes(data))
         console.log("single quote >>>> ", singleQuote)
     }
 
